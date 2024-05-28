@@ -1,0 +1,20 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="infomusicplus.disk_form">
+      <field name="name">Infomusic+ disk form</field>
+      <field name="model">infomusic.disk</field>
+      <field name="inherit_id" ref="infomusic.disk_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//sheet/group" position="before">
+          <field name="cover" widget="image"/>
+        </xpath>
+        <xpath expr="//field[@name='publish_date']" position="after">
+          <field name="genre"/>
+          <field name="nbr_of_songs"/>
+        </xpath>
+      </field>
+    </record>
+
+  </data>
+</odoo>

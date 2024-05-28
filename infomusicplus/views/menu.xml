@@ -1,0 +1,14 @@
+<odoo>
+  <data>
+
+    <!-- Sobreescribeixo el menu root per reaprofitar el menu de Infomusic i afegeixo les noves entrades-->
+    <!-- Top menu item -->
+    <menuitem name="Infomusic+ NC" id="infomusic.menu_root"/>
+    <!-- menu categories -->
+    <menuitem name="Tours" id="infomusicplus.menu_1" parent="infomusic.menu_root"/>
+    <!-- actions -->
+    <menuitem name="Tours" id="infomusicplus.menu_1_list" parent="infomusicplus.menu_1"
+              action="infomusicplus.tour_action_window"/>
+
+  </data>
+</odoo>

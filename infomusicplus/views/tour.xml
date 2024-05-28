@@ -1,0 +1,50 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="infomusicplus.tour_list">
+      <field name="name">infomusicplus tour list</field>
+      <field name="model">infomusicplus.tour</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="singer_id"/>
+          <field name="state"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="infomusicplus.tour_form">
+      <field name="name">infomusicplus tour form</field>
+      <field name="model">infomusicplus.tour</field>
+      <field name="arch" type="xml">
+        <form>
+          <header>
+            <button name="tour_done" type="object" string="DONE"/>
+            <button name="tour_cancel" type="object" string="CANCEL"/>
+            <field name="state" widget="statusbar" statusbar_visible="new,confirmed,done,cancelled"/>
+          </header>
+          <sheet>
+            <h1>
+              <field name="name"/>
+            </h1>
+            <group>
+              <field name="singer_id"/>
+            </group>
+            <notebook>
+              <page string='Cities'>
+                <field name='tour_city_ids'/>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="infomusicplus.tour_action_window">
+      <field name="name">Tours</field>
+      <field name="res_model">infomusicplus.tour</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+  </data>
+</odoo>

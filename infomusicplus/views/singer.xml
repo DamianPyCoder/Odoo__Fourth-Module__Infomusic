@@ -1,0 +1,37 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="infomusicplus.singer_list">
+      <field name="name">Infomusic+ singer list</field>
+      <field name="model">infomusic.singer</field>
+      <field name="inherit_id" ref="infomusic.singer_list"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='birthday']" position="after">
+          <field name="age"/>
+          <field name="country_of_birth"/>
+        </xpath>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="infomusicplus.singer_form">
+      <field name="name">Infomusic+ singer form</field>
+      <field name="model">infomusic.singer</field>
+      <field name="inherit_id" ref="infomusic.singer_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//sheet/group" position="before">
+          <field name="photo" widget="image"/>
+        </xpath>
+        <xpath expr="//field[@name='birthday']" position="after">
+          <field name="age"/>
+          <field name="country_of_birth"/>
+        </xpath>
+        <xpath expr="//page" position="after">
+          <page string="Tours">
+            <field name="tour_ids"/>
+          </page>
+        </xpath>
+      </field>
+    </record>
+
+  </data>
+</odoo>

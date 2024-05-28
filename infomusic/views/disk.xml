@@ -1,0 +1,47 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="infomusic.disk_list">
+      <field name="name">infomusic disk list</field>
+      <field name="model">infomusic.disk</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="publish_date"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="infomusic.disk_form">
+      <field name="name">infomusic disk form</field>
+      <field name="model">infomusic.disk</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <h1>
+              <field name="name"/>
+            </h1>
+            <group>
+              <field name="publish_date"/>
+            </group>
+            <notebook>
+              <page string='Songs'>
+                <field name='song_ids'/>
+              </page>
+              <page string='Singers'>
+                <field name='singer_ids'/>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="infomusic.disk_action_window">
+      <field name="name">Disks</field>
+      <field name="res_model">infomusic.disk</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+  </data>
+</odoo>

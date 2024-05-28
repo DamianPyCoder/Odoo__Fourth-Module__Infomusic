@@ -1,0 +1,14 @@
+<odoo>
+  <data>
+
+    <!-- Top menu item -->
+    <menuitem name="Infomusic NC" id="infomusic.menu_root"/>
+    <!-- menu categories -->
+    <menuitem name="Music" id="infomusic.menu_1" parent="infomusic.menu_root"/>
+    <!-- actions -->
+    <menuitem name="Disks" id="infomusic.menu_1_list" parent="infomusic.menu_1"
+              action="infomusic.disk_action_window"/>
+    <menuitem name="Singers" id="infomusic.menu_2_list" parent="infomusic.menu_1"
+              action="infomusic.singer_action_window"/>
+  </data>
+</odoo>
